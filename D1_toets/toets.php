@@ -123,7 +123,11 @@ echo '  Height: <input type="text" name="height">' . "\n";
 echo '  <input type="submit" value="Calculate Area">' . "\n";
 echo "</form>\n";
 
-if (is_numeric($_GET['width']) && is_numeric($_GET['height'])) {
+if (isset($_GET['width']) &&
+    isset($_GET['height']) &&
+    is_numeric($_GET['width']) &&
+    is_numeric($_GET['height'])
+) {
     calculateArea($_GET['width'], $_GET['height']);
 }
 
